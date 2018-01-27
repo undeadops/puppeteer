@@ -1,0 +1,26 @@
+queues:
+  - queue: twitterapp.created
+    amqhost: RABBITMQ_URL # Loaded From Env
+    threshold: 2500
+    watermark: 500
+    scaleby: 5
+    scalemin: 3
+    scalemax: 140
+    method: scale
+    deisapp: twitterapp-prod
+    worker: cmd
+alerts:
+  - name: rabbitmqTwitterActivityCreated
+    alerthost: http://prometheus:9093
+    method: restartworker
+    deisapp: streamer-prod
+    worker: twitter
+asg:
+  - asgroupname: nlp-workers
+    awsregion: "us-east-1"
+    enabled: true
+    queue: nlp.activity.created
+    amqhost: RABBITMQ_URL
+    threshold: 10000
+    watermark: 1000
+    method: scale
