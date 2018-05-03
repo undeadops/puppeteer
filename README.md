@@ -4,7 +4,7 @@ AutoScaling and Restarting Deis Workflow Applications based on Thresholds in Rab
 
 First iteration, and I'm sure it needs refactoring as well as some stability handling improvements.
 
-If looking for Pod AutoSclaing, the https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/ might be more of what your looking for.  This was a scratch my own itch project. A proof of concept for doing more things within the Kubernetes API(not that this uses it), but utilizing Kubernetes as a framework for making hard stuff easy. 
+If looking for Pod AutoScaling, the https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/ might be more of what your looking for.  This was a scratch my own itch project. A proof of concept for doing more things within the Kubernetes API(not that this uses it), but utilizing Kubernetes as a framework for making hard stuff easy. 
 
 ## Basic Premise
 
