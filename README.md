@@ -4,6 +4,8 @@ AutoScaling and Restarting Deis Workflow Applications based on Thresholds in Rab
 
 First iteration, and I'm sure it needs refactoring as well as some stability handling improvements.
 
+If looking for Pod AutoSclaing, the https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/ might be more of what your looking for.  This was a scratch my own itch project. A proof of concept for doing more things within the Kubernetes API(not that this uses it), but utilizing Kubernetes as a framework for making hard stuff easy. 
+
 ## Basic Premise
 
 Monitor RabbitMQ Queue, if it reaches the Threshold, scale worker pods by ScaleBy count.  If Queue, is under watermark, scale number of pods down by 1(not currently configurable).  Idea being to slowly scale back resources allocated, so we potentially can remove hosts from the kubernetes cluster at night(different process for that).
